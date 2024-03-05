@@ -1,0 +1,23 @@
+# Ignora os arquivos XD, Illustraor e Photoshop e pastas
+*.xd
+xd/
+XD/
+*.ai
+*.psd
+*.eps
+.psb
+
+# Ignora os arquivos de imagem
+*.png
+*.jpg
+*.jpeg
+*.svg
+*.ebp
+*.svg
+
+# Ignora as pastas de imagem
+node_modules/
+
+# Ignora os .zip e outros
+*.zip
+*.rar

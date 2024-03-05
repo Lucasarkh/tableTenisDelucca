@@ -1,0 +1,98 @@
+[
+  {
+      "nome": "Lucas",
+      "vitorias": {
+        "03/03/2023": 0
+
+      },
+      "genero": "masculino",
+      "avatar": "assets/imgs/players/lucas.jpg"
+  },
+  {
+      "nome": "Arthur",
+      "vitorias": {
+        "03/03/2023": 0
+      },
+      "genero": "masculino",
+      "avatar": "assets/imgs/players/arthur.jpg"
+      
+  },
+  {
+      "nome": "Felps",
+      "vitorias": {
+        "03/03/2023": 0
+      },
+      "genero": "masculino",
+      "avatar": "assets/imgs/players/felps.jpg"
+  },
+  {
+      "nome": "Roger",
+      "vitorias": {
+        "03/03/2023": 0
+      },
+      "genero": "masculino",
+      "avatar": "assets/imgs/players/roger.jpg"
+  },
+  {
+      "nome": "Thales",
+      "vitorias": {
+        "03/03/2023": 0
+      },
+      "genero": "masculino",
+      "avatar": "assets/imgs/players/thales.jpg"
+  },
+  {
+      "nome": "Vena",
+      "vitorias": {
+        "03/03/2023": 0
+      },
+      "genero": "masculino",
+      "avatar": "assets/imgs/players/vena.jpg"
+  },
+  {
+      "nome": "Pedro Befi",
+      "vitorias": {
+        "03/03/2023": 0
+
+      },
+      "genero": "masculino",
+      "avatar": "assets/imgs/players/pedro-befi.jpg"
+  },
+  {
+      "nome": "Pedro De Wit",
+      "vitorias": {
+        "03/03/2023": 0
+
+      },
+      "genero": "masculino",
+      "avatar": "assets/imgs/players/pedro-de-wit.jpg"
+  },
+  {
+      "nome": "Luiz",
+      "vitorias": {
+        "03/03/2023": 0
+
+      },
+      "genero": "masculino",
+      "avatar": "assets/imgs/players/luiz.jpg"
+  },
+  {
+      "nome": "Japa",
+      "vitorias": {
+        "03/03/2023": 0
+
+      },
+      "genero": "masculino",
+      "avatar": "assets/imgs/players/japa.jpg"
+  },
+  {
+      "nome": "Kenny",
+      "vitorias": {
+        "03/03/2023": 0
+
+      },
+      "genero": "masculino",
+      "avatar": "assets/imgs/players/kenny.jpg"
+  }
+]
+    
