@@ -10,24 +10,6 @@ const downMarker = "assets/imgs/down.svg";
 const neutralMarker = "assets/imgs/neutral.svg";
 const markerCtn = document.querySelectorAll(".marker-ctn");
 
-podium.style.height = "0px";
-podium.style.border = "none";
-setTimeout(() => {
-    const score = document.querySelectorAll(".score");
-
-    score.forEach((element, index) => {
-        if (index === 0) {
-            element.style.borderRadius = "16px 16px 0 0";
-        }
-        if (index % 2 === 0) {
-            element.style.backgroundColor = "rgb(128, 128, 128, 0.6)";
-        } else {
-            element.style.backgroundColor = "rgb(128, 128, 128, 0.8)";
-        }
-    });
-}, 100);
-
-
 function lerJogadores(callback) {
     fetch("players.json")
         .then((response) => {
@@ -105,7 +87,6 @@ function atualizarUI(jogadores) {
         const jogador = jogadores[i];
         const marcadores = jogador.marcadores || {};
         const datas = Object.keys(marcadores);
-        
 
         datas.sort((a, b) => new Date(a) - new Date(b));
 
@@ -117,7 +98,6 @@ function atualizarUI(jogadores) {
             if (totalVitorias > 0) {
                 podium.style.height = "540px";
                 podium.style.borderBottom = "4px solid rgb(95, 95, 95)";
-                
             }
         }
         if (i === 0 && totalVitorias > 0) {
@@ -186,12 +166,12 @@ function atualizarUI(jogadores) {
             </div>
             `;
         } else {
-            function content (){
+            function content() {
                 if (totalVitorias === 0) {
                     return "-";
                 } else {
-                    return i + 1 + "º"; 
-               }
+                    return i + 1 + "º";
+                }
             }
             scoreBoard.innerHTML += `
             <div class="score">
@@ -205,8 +185,6 @@ function atualizarUI(jogadores) {
         }
     }
 }
-
-
 
 lerJogadores((err, jogadores) => {
     if (err) {
@@ -222,8 +200,6 @@ lerJogadores((err, jogadores) => {
         atualizarUI(jogadores);
     }
 });
-
-
 
 function loadLottieAnimation(containerSelector, animationPath) {
     setTimeout(function () {
@@ -264,4 +240,19 @@ window.onload = function () {
         loader.style.display = "none";
         pageRanking.style.display = "block";
     }, 2000);
+
+    podium.style.height = "0px";
+    podium.style.border = "none";
+    const score = document.querySelectorAll(".score");
+
+    score.forEach((element, index) => {
+        if (index === 0) {
+            element.style.borderRadius = "16px 16px 0 0";
+        }
+        if (index % 2 === 0 && loader.style.display === "flex") {
+            element.style.backgroundColor = "rgb(128, 128, 128, 0.6)";
+        } else {
+            element.style.backgroundColor = "rgb(128, 128, 128, 0.8)";
+        }
+    });
 };
