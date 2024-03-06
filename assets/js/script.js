@@ -39,7 +39,9 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         loader.style.display = "none";
         pageRanking.style.display = "block";
-    }, 2000);
+    }, 5000);
+
+
 });
 
 function lerJogadores(callback) {
