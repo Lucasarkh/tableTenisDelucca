@@ -120,6 +120,16 @@
       },
       "genero": "feminino",
       "avatar": "assets/imgs/players/pamela.jpg"
+  },
+  {
+      "nome": "Thiago",
+      "vitorias": {
+        "03/03/2023": 0
+
+      },
+      "genero": "feminino",
+      "avatar": "assets/imgs/players/thiago.jpg"
   }
+  
 ]
     
