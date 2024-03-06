@@ -25,7 +25,7 @@ setTimeout(() => {
             element.style.backgroundColor = "rgb(128, 128, 128, 0.8)";
         }
     });
-}, 500);
+}, 100);
 
 
 function lerJogadores(callback) {
@@ -254,6 +254,7 @@ loadLottieAnimation(".festa", "assets/json/festa.json");
 window.onload = function () {
     const loader = document.querySelector(".loader");
     const body = document.querySelector("body");
+    const pageRanking = document.querySelector(".page-ranking");
     setTimeout(() => {
         if (loader.style.display === "flex") {
             body.style.overflow = "hidden";
@@ -261,5 +262,6 @@ window.onload = function () {
             body.style.overflow = "auto";
         }
         loader.style.display = "none";
+        pageRanking.style.display = "block";
     }, 2000);
 };
