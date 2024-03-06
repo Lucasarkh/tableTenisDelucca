@@ -10,6 +10,38 @@ const downMarker = "assets/imgs/down.svg";
 const neutralMarker = "assets/imgs/neutral.svg";
 const markerCtn = document.querySelectorAll(".marker-ctn");
 
+document.addEventListener("DOMContentLoaded", function () {
+    podium.style.height = "0px";
+    podium.style.border = "none";
+    setTimeout(() => {
+        const score = document.querySelectorAll(".score");
+
+        score.forEach((element, index) => {
+            if (index === 0) {
+                element.style.borderRadius = "16px 16px 0 0";
+            }
+            if (index % 2 === 0) {
+                element.style.backgroundColor = "rgb(128, 128, 128, 0.6)";
+            } else {
+                element.style.backgroundColor = "rgb(128, 128, 128, 0.8)";
+            }
+        });
+    }, 100);
+
+    const loader = document.querySelector(".loader");
+    const body = document.querySelector("body");
+    const pageRanking = document.querySelector(".page-ranking");
+    setTimeout(() => {
+        if (loader.style.display === "flex") {
+            body.style.overflow = "hidden";
+        } else {
+            body.style.overflow = "auto";
+        }
+        loader.style.display = "none";
+        pageRanking.style.display = "block";
+    }, 2000);
+});
+
 function lerJogadores(callback) {
     fetch("players.json")
         .then((response) => {
@@ -226,36 +258,3 @@ loadLottieAnimation(".fire-2", "assets/json/fire-2.json");
 loadLottieAnimation(".fire-3", "assets/json/fire-3.json");
 loadLottieAnimation(".ping-loader", "assets/json/ping-loader.json");
 loadLottieAnimation(".festa", "assets/json/festa.json");
-
-window.onload = function () {
-    const loader = document.querySelector(".loader");
-    const body = document.querySelector("body");
-    const pageRanking = document.querySelector(".page-ranking");
-    setTimeout(() => {
-        if (loader.style.display === "flex") {
-            body.style.overflow = "hidden";
-        } else {
-            body.style.overflow = "auto";
-        }
-        loader.style.display = "none";
-        pageRanking.style.display = "block";
-    }, 2000);
-
-    podium.style.height = "0px";
-    podium.style.border = "none";
-    const score = document.querySelectorAll(".score");
-
-    score.forEach((element, index) => {
-        if (index === 0) {
-            element.style.borderRadius = "16px 16px 0 0";
-        }
-        if (loader.style.display === "flex") {
-            if (index % 2 === 0) {
-                element.style.backgroundColor = "rgb(128, 128, 128, 0.6)";
-            } else {
-                element.style.backgroundColor = "rgb(128, 128, 128, 0.8)";
-            }
-        }
-
-    });
-};
