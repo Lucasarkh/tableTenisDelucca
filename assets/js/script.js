@@ -249,10 +249,13 @@ window.onload = function () {
         if (index === 0) {
             element.style.borderRadius = "16px 16px 0 0";
         }
-        if (index % 2 === 0 && loader.style.display === "flex") {
-            element.style.backgroundColor = "rgb(128, 128, 128, 0.6)";
-        } else {
-            element.style.backgroundColor = "rgb(128, 128, 128, 0.8)";
+        if (loader.style.display === "flex") {
+            if (index % 2 === 0) {
+                element.style.backgroundColor = "rgb(128, 128, 128, 0.6)";
+            } else {
+                element.style.backgroundColor = "rgb(128, 128, 128, 0.8)";
+            }
         }
+
     });
 };
