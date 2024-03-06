@@ -93,6 +93,33 @@
       },
       "genero": "masculino",
       "avatar": "assets/imgs/players/kenny.jpg"
+  },
+  {
+      "nome": "Angélica",
+      "vitorias": {
+        "03/03/2023": 0
+
+      },
+      "genero": "feminino",
+      "avatar": "assets/imgs/players/angelica.jpg"
+  },
+  {
+      "nome": "Júlia",
+      "vitorias": {
+        "03/03/2023": 0
+
+      },
+      "genero": "feminino",
+      "avatar": "assets/imgs/players/julia.jpg"
+  },
+  {
+      "nome": "Pâmela",
+      "vitorias": {
+        "03/03/2023": 0
+
+      },
+      "genero": "feminino",
+      "avatar": "assets/imgs/players/pamela.jpg"
   }
 ]
     
