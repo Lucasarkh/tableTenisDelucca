@@ -462,6 +462,13 @@ header nav ul {
             transform: rotate(3deg);
         }
     }
+    .loader-ctn {
+        --_g: no-repeat radial-gradient(farthest-side,#000000 90%,#0000);
+      }
+      .loader-ctn:before,
+      .loader-ctn:after {
+        background: #000000;
+      }
 }
 
 @media (max-width: 374px) {
