@@ -285,3 +285,27 @@ loadLottieAnimation(".fire-2", "assets/json/fire-2.json");
 loadLottieAnimation(".fire-3", "assets/json/fire-3.json");
 loadLottieAnimation(".ping-loader", "assets/json/ping-loader.json");
 loadLottieAnimation(".festa", "assets/json/festa.json");
+
+
+// Preload Lottie animations
+const lottieAnimationPaths = [
+    "assets/json/winner.json",
+    "assets/json/lottie-2.json",
+    "assets/json/lottie-3.json",
+    "assets/json/fire-1.json",
+    "assets/json/fire-2.json",
+    "assets/json/fire-3.json",
+    "assets/json/ping-loader.json",
+    "assets/json/festa.json"
+];
+
+function preloadLottieAnimations(paths) {
+    paths.forEach(path => {
+        const lottieContainer = document.createElement('div');
+        lottieContainer.classList.add('hidden');
+        document.body.appendChild(lottieContainer);
+        loadLottieAnimation(lottieContainer, path);
+    });
+}
+
+preloadLottieAnimations(lottieAnimationPaths);
