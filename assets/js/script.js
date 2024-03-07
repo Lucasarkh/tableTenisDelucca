@@ -52,8 +52,14 @@ document.addEventListener("DOMContentLoaded", function () {
             body.style.overflow = "auto";
         }
         loader.style.display = "none";
+    }, 4500);
+    const loaderCtn = document.querySelector(".ranking-loader");
+
+    setTimeout(() => {
         pageRanking.style.display = "block";
-    }, 5000);
+        loaderCtn.style.display = "none";
+    }, 5500);
+    console.log(loaderCtn)
 });
 
 function lerJogadores(callback) {

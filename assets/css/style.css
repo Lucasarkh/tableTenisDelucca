@@ -54,6 +54,9 @@ header nav ul {
     display: flex;
     list-style: none;
 }
+.page-ranking {
+    display: none;
+}
 /* Dinâmica do ranking */
 .ranking-ctn {
     color: #fff;
@@ -302,10 +305,53 @@ header nav ul {
     height: 32px;
     animation: none;
 }
+.ranking-loader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.loader-ctn {
+    height: 15px;
+    aspect-ratio: 4;
+    --_g: no-repeat radial-gradient(farthest-side,#ffffff 90%,#0000);
+    background: 
+      var(--_g) left, 
+      var(--_g) right;
+    background-size: 25% 100%;
+    display: grid;
+  }
+  .loader-ctn:before,
+  .loader-ctn:after {
+    content: "";
+    height: inherit;
+    aspect-ratio: 1;
+    grid-area: 1/1;
+    margin: auto;
+    border-radius: 50%;
+    transform-origin: -100% 50%;
+    background: #ffffff;
+    animation: l49 1s infinite linear;
+  }
+  .loader-ctn:after {
+    transform-origin: 200% 50%;
+    --s:-1;
+    animation-delay: -.5s;
+  }
+  
+  @keyframes l49 {
+    58%,
+    100% {transform: rotate(calc(var(--s,1)*1turn))}
+  }
 @media (max-width: 1024px) {
     body {
         background-image: unset;
         background-color: gray;
+    }
     main {
         padding: 16px 0;
     }
@@ -423,3 +469,4 @@ header nav ul {
         padding: 8px;
     }
 }
+
