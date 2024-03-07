@@ -463,11 +463,11 @@ header nav ul {
         }
     }
     .loader-ctn {
-        --_g: no-repeat radial-gradient(farthest-side,#000000 90%,#0000);
+        --_g: no-repeat radial-gradient(farthest-side,#5a5a5a 90%,#0000);
       }
       .loader-ctn:before,
       .loader-ctn:after {
-        background: #000000;
+        background: #5a5a5a;
       }
 }
 
