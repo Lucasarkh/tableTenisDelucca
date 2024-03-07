@@ -154,6 +154,16 @@
       },
       "genero": "feminino",
       "avatar": "assets/imgs/players/brito.jpg"
+  },
+  {
+      "nome": "Isabela",
+      "vitorias": {
+        "03/03/2023": 0,
+        "07/03/2024": 0
+
+      },
+      "genero": "feminino",
+      "avatar": "assets/imgs/players/isabela.jpg"
   }
 
   
