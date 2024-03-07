@@ -36,8 +36,7 @@ setTimeout(() => {
     loadLottieAnimation(".festa", "assets/json/festa.json");
 }, 500);
 
-document.addEventListener("DOMContentLoaded", function () {
-    podium.style.height = "0px";
+podium.style.height = "0px";
     podium.style.border = "none";
     setTimeout(() => {
         const score = document.querySelectorAll(".score");
@@ -51,7 +50,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 element.style.backgroundColor = "rgb(128, 128, 128, 0.8)";
             }
         });
-    }, 100);
+    }, 600);
+
+document.addEventListener("DOMContentLoaded", function () {
+    
     const loaderText = document.querySelector(".loader-text");
     const loader = document.querySelector(".loader");
     const pageRanking = document.querySelector(".page-ranking");
