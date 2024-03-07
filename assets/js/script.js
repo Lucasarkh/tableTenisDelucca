@@ -25,14 +25,16 @@ function loadLottieAnimation(containerSelector, animationPath) {
     }, 100);
 }
 
-loadLottieAnimation(".lottie-one", "assets/json/winner.json");
-loadLottieAnimation(".lottie-two", "assets/json/lottie-2.json");
-loadLottieAnimation(".lottie-three", "assets/json/lottie-3.json");
-loadLottieAnimation(".fire-1", "assets/json/fire-1.json");
-loadLottieAnimation(".fire-2", "assets/json/fire-2.json");
-loadLottieAnimation(".fire-3", "assets/json/fire-3.json");
-loadLottieAnimation(".ping-loader", "assets/json/ping-loader.json");
-loadLottieAnimation(".festa", "assets/json/festa.json");
+setTimeout(() => {
+    loadLottieAnimation(".lottie-one", "assets/json/winner.json");
+    loadLottieAnimation(".lottie-two", "assets/json/lottie-2.json");
+    loadLottieAnimation(".lottie-three", "assets/json/lottie-3.json");
+    loadLottieAnimation(".fire-1", "assets/json/fire-1.json");
+    loadLottieAnimation(".fire-2", "assets/json/fire-2.json");
+    loadLottieAnimation(".fire-3", "assets/json/fire-3.json");
+    loadLottieAnimation(".ping-loader", "assets/json/ping-loader.json");
+    loadLottieAnimation(".festa", "assets/json/festa.json");
+}, 500);
 
 document.addEventListener("DOMContentLoaded", function () {
     podium.style.height = "0px";
@@ -53,25 +55,19 @@ document.addEventListener("DOMContentLoaded", function () {
     const loaderText = document.querySelector(".loader-text");
     const loader = document.querySelector(".loader");
     const pageRanking = document.querySelector(".page-ranking");
-    
-    const messages = [
-        "Preparando saque",
-        "Ajustando a redinha",
-        "Verificando a raquete",
-        "Devolvendo com efeito",
-        "Verificando a mesa"
-    ];
-    
+
+    const messages = ["Preparando saque", "Ajustando a redinha", "Verificando a raquete", "Devolvendo com efeito", "Verificando a mesa"];
+
     let index = 0;
-    
+
     function displayMessage() {
         loaderText.textContent = messages[index];
         index = (index + 1) % messages.length;
     }
-        const intervalId = setInterval(displayMessage, 1000);
-    
+    const intervalId = setInterval(displayMessage, 1000);
+
     setTimeout(() => {
-        clearInterval(intervalId); 
+        clearInterval(intervalId);
         if (loader.style.display === "flex") {
             body.style.overflow = "hidden";
         } else {
@@ -85,7 +81,7 @@ document.addEventListener("DOMContentLoaded", function () {
         pageRanking.style.display = "block";
         loaderCtn.style.display = "none";
     }, 5500);
-    console.log(loaderCtn)
+    console.log(loaderCtn);
 });
 
 function lerJogadores(callback) {
@@ -160,8 +156,6 @@ function calcularTotalVitoriasAteData(jogador, data) {
     return totalVitorias;
 }
 
-
-
 function atualizarUI(jogadores) {
     for (let i = 0; i < jogadores.length; i++) {
         const jogador = jogadores[i];
@@ -171,8 +165,6 @@ function atualizarUI(jogadores) {
         datas.sort((a, b) => new Date(a) - new Date(b));
 
         const marcador = marcadores[datas[datas.length - 1]] || neutralMarker;
-
-
 
         let totalVitorias = 0;
         for (const data in jogador.vitorias) {
@@ -186,9 +178,7 @@ function atualizarUI(jogadores) {
             }
         }
 
-
         if (i === 0 && totalVitorias > 0) {
-            
             const jogadorNome = jogador.nome;
             podium.innerHTML += `
             <div class="col-12 col-lg-3" id="podium">
@@ -291,4 +281,3 @@ lerJogadores((err, jogadores) => {
         atualizarUI(jogadores);
     }
 });
-
