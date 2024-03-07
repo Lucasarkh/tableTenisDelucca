@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Madimi+One&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Madimi+One&display=swap");
 
 * {
     margin: 0;
@@ -7,7 +7,10 @@
     font-family: "Madimi One", sans-serif;
     font-style: normal;
 }
-h2, h3, h4, p {
+h2,
+h3,
+h4,
+p {
     margin: 0 !important;
 }
 body {
@@ -58,7 +61,7 @@ header nav ul {
     width: 100%;
 }
 .ranking-ctn h2 {
-    background-color:  rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.6);
     display: inline-block;
     padding: 8px 16px;
     border-radius: 16px;
@@ -71,7 +74,6 @@ header nav ul {
     gap: 16px;
     border-bottom: 4px solid rgb(95, 95, 95);
     width: 100%;
-
 }
 #podium {
     height: fit-content;
@@ -98,11 +100,10 @@ header nav ul {
     border-radius: 8px;
 }
 .vitorias {
-    background-color:  rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.6);
     padding: 8px 16px;
     border-radius: 8px;
     margin: 8px 0;
-
 }
 
 @keyframes podium {
@@ -136,7 +137,7 @@ header nav ul {
     z-index: 2;
 }
 .marker {
-    width: 24px; 
+    width: 24px;
     position: absolute;
     transform: translate(-50%, -50%);
     z-index: 2;
@@ -184,7 +185,7 @@ header nav ul {
     width: 140px;
 }
 #lottie {
-    background-color:  rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.6);
     border-radius: 16px;
     display: flex;
     flex-direction: column;
@@ -301,10 +302,106 @@ header nav ul {
 }
 @media (max-width: 1024px) {
     .ranking-ctn {
-        display: none;
+        padding: 16px;
     }
     .mobile-note p {
         color: white;
         text-transform: uppercase;
+    }
+    .podium {
+        flex-wrap: wrap !important;
+        margin-top: 24px !important;
+    }
+    #podium {
+        display: block;
+    }
+    #podium:nth-of-type(1) #lottie {
+        animation: none;
+    }
+    #podium:nth-of-type(2) {
+        margin-top: unset;
+    }
+    #podium:nth-of-type(3) {
+        margin-top: unset;
+    }
+    #podium:nth-of-type(2) .bar {
+        height: unset;
+    }
+    #podium:nth-of-type(3) .bar {
+        height: unset;
+    }
+    #podium #lottie {
+        animation: none;
+    }
+    #lottie {
+        height: auto;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+    .bar {
+        height: unset;
+        display: none;
+    }
+    #podium:nth-of-type(1),
+    .bar:nth-of-type(1) {
+        order: unset;
+    }
+    #podium:nth-of-type(2),
+    .bar:nth-of-type(2) {
+        order: unset;
+    }
+    #podium:nth-of-type(3),
+    .bar:nth-of-type(3) {
+        order: unset;
+    }
+    .avatar {
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        top: unset;
+        right: unset;
+        bottom: 24px;
+        left: 36%;
+    }
+    #podium:first-of-type .avatar {
+        top: unset;
+    }
+    .tittle h4:nth-of-type(2) {
+        width: unset;
+    }
+    .score .ctn-img {
+        position: relative;
+        text-align: start;
+        width: 132px;
+        transform: translateX(40px);
+    }
+    .marker-ctn img {
+        position: absolute;
+        left: -30px;
+        top: 50%;
+        transform: translate(0, -50%);
+    }
+    .player-position {
+        bottom: 8px;
+        left: 16px;
+    }
+    .player-position span {
+        font-size: 32px;
+        animation: shake 0.3s linear alternate infinite;
+    }
+
+    @keyframes shake {
+        from {
+            transform: rotate(-3deg);
+        }
+        to {
+            transform: rotate(3deg);
+        }
+    }
+}
+
+@media (max-width: 374px) {
+    .ranking-ctn {
+        padding: 8px;
     }
 }

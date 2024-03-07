@@ -1,21 +1,18 @@
-const player = document.querySelector(".player");
+const body = document.querySelector("body");
 const podium = document.querySelector(".podium");
-const lottie = document.querySelector(".lottie");
-const numbers = document.querySelector(".number");
+const scoreBoard = document.querySelector(".scoreboard");
+
 const avatarHomem = "assets/imgs/avatar-homem.jpg";
 const avatarMulher = "assets/imgs/avatar-mulher.jpg";
-const scoreBoard = document.querySelector(".scoreboard");
 const upMarker = "assets/imgs/up.svg";
 const downMarker = "assets/imgs/down.svg";
 const neutralMarker = "assets/imgs/neutral.svg";
-const markerCtn = document.querySelectorAll(".marker-ctn");
 
 document.addEventListener("DOMContentLoaded", function () {
     podium.style.height = "0px";
     podium.style.border = "none";
     setTimeout(() => {
         const score = document.querySelectorAll(".score");
-
         score.forEach((element, index) => {
             if (index === 0) {
                 element.style.borderRadius = "16px 16px 0 0";
@@ -29,7 +26,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }, 100);
 
     const loader = document.querySelector(".loader");
-    const body = document.querySelector("body");
     const pageRanking = document.querySelector(".page-ranking");
     setTimeout(() => {
         if (loader.style.display === "flex") {
@@ -40,8 +36,6 @@ document.addEventListener("DOMContentLoaded", function () {
         loader.style.display = "none";
         pageRanking.style.display = "block";
     }, 5000);
-
-
 });
 
 function lerJogadores(callback) {
@@ -129,16 +123,24 @@ function atualizarUI(jogadores) {
         let totalVitorias = 0;
         for (const data in jogador.vitorias) {
             totalVitorias += jogador.vitorias[data];
-            if (totalVitorias > 0) {
+            if (totalVitorias > 0 && innerWidth > 1024) {
                 podium.style.height = "540px";
                 podium.style.borderBottom = "4px solid rgb(95, 95, 95)";
+            } else {
+                podium.style.height = "auto";
             }
+        }
+        function responsiveBreak () {
+            if (innerWidth < 1024) {
+                return `<br>`;
+            } 
         }
         if (i === 0 && totalVitorias > 0) {
             const jogadorNome = jogador.nome;
             podium.innerHTML += `
-            <div class="col-lg-3" id="podium">
+            <div class="col-12 col-lg-3" id="podium">
                 <div id="lottie">
+                    <div class="d-flex d-lg-none position-absolute player-position"><span>${i + 1}º</span></div>
                     <div class="festa"></div>
                     <div class="lottie-one lottie"></div>
                     <div class="avatar">
@@ -147,7 +149,7 @@ function atualizarUI(jogadores) {
                     <div class="identificador">
                         <h4 class="nomeJogador">${jogador.nome}</h4>
                         <div class="vitorias">
-                            <h4>Vitórias:<span> ${totalVitorias}</span></h4>
+                            <h4>Vitórias:${responsiveBreak()}<span> ${totalVitorias}</span></h4>
                     </div>
                 </div>
             </div>
@@ -159,8 +161,9 @@ function atualizarUI(jogadores) {
             `;
         } else if (i === 1 && totalVitorias > 0) {
             podium.innerHTML += `
-            <div class="col-lg-3" id="podium">
+            <div class="col-12 col-lg-3" id="podium">
                 <div id="lottie">
+                    <div class="d-flex d-lg-none position-absolute player-position"><span>${i + 1}º</span></div>
                     <div class="lottie-two lottie"></div>
                     <div class="avatar">
                         <img src="${jogador.avatar}" alt="avatar" />
@@ -168,7 +171,7 @@ function atualizarUI(jogadores) {
                     <div class="identificador">
                         <h4 class="nomeJogador">${jogador.nome}</h4>
                         <div class="vitorias">
-                            <h4>Vitórias:<span> ${totalVitorias}</span></h4>
+                            <h4>Vitórias:${responsiveBreak()}<span> ${totalVitorias}</span></h4>
                     </div>
                 </div>
             </div>
@@ -180,8 +183,9 @@ function atualizarUI(jogadores) {
         `;
         } else if (i === 2 && totalVitorias > 0) {
             podium.innerHTML += `
-            <div class="col-lg-3" id="podium">
+            <div class="col-12 col-lg-3" id="podium">
                 <div id="lottie">
+                    <div class="d-flex d-lg-none position-absolute player-position"><span>${i + 1}º</span></div>
                     <div class="lottie-three lottie"></div>
                     <div class="avatar">
                         <img src="${jogador.avatar}" alt="avatar" />
@@ -189,7 +193,7 @@ function atualizarUI(jogadores) {
                     <div class="identificador">
                         <h4 class="nomeJogador">${jogador.nome}</h4>
                         <div class="vitorias">
-                            <h4>Vitórias:<span> ${totalVitorias}</span></h4>
+                            <h4>Vitórias:${responsiveBreak()}<span> ${totalVitorias}</span></h4>
                     </div>
                 </div>
             </div>
@@ -249,7 +253,7 @@ function loadLottieAnimation(containerSelector, animationPath) {
             autoplay: true,
             path: animationPath,
         });
-    }, 1000);
+    }, 100);
 }
 
 loadLottieAnimation(".lottie-one", "assets/json/winner.json");
