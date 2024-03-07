@@ -8,6 +8,32 @@ const upMarker = "assets/imgs/up.svg";
 const downMarker = "assets/imgs/down.svg";
 const neutralMarker = "assets/imgs/neutral.svg";
 
+function loadLottieAnimation(containerSelector, animationPath) {
+    setTimeout(function () {
+        var container = document.querySelector(containerSelector);
+        if (!container) {
+            console.error("Container não encontrado:", containerSelector);
+            return;
+        }
+        bodymovin.loadAnimation({
+            container: container,
+            renderer: "svg",
+            loop: true,
+            autoplay: true,
+            path: animationPath,
+        });
+    }, 100);
+}
+
+loadLottieAnimation(".lottie-one", "assets/json/winner.json");
+loadLottieAnimation(".lottie-two", "assets/json/lottie-2.json");
+loadLottieAnimation(".lottie-three", "assets/json/lottie-3.json");
+loadLottieAnimation(".fire-1", "assets/json/fire-1.json");
+loadLottieAnimation(".fire-2", "assets/json/fire-2.json");
+loadLottieAnimation(".fire-3", "assets/json/fire-3.json");
+loadLottieAnimation(".ping-loader", "assets/json/ping-loader.json");
+loadLottieAnimation(".festa", "assets/json/festa.json");
+
 document.addEventListener("DOMContentLoaded", function () {
     podium.style.height = "0px";
     podium.style.border = "none";
@@ -266,52 +292,3 @@ lerJogadores((err, jogadores) => {
     }
 });
 
-function loadLottieAnimation(containerSelector, animationPath) {
-    setTimeout(function () {
-        var container = document.querySelector(containerSelector);
-        if (!container) {
-            console.error("Container não encontrado:", containerSelector);
-            return;
-        }
-        bodymovin.loadAnimation({
-            container: container,
-            renderer: "svg",
-            loop: true,
-            autoplay: true,
-            path: animationPath,
-        });
-    }, 100);
-}
-
-loadLottieAnimation(".lottie-one", "assets/json/winner.json");
-loadLottieAnimation(".lottie-two", "assets/json/lottie-2.json");
-loadLottieAnimation(".lottie-three", "assets/json/lottie-3.json");
-loadLottieAnimation(".fire-1", "assets/json/fire-1.json");
-loadLottieAnimation(".fire-2", "assets/json/fire-2.json");
-loadLottieAnimation(".fire-3", "assets/json/fire-3.json");
-loadLottieAnimation(".ping-loader", "assets/json/ping-loader.json");
-loadLottieAnimation(".festa", "assets/json/festa.json");
-
-
-// Preload Lottie animations
-const lottieAnimationPaths = [
-    "assets/json/winner.json",
-    "assets/json/lottie-2.json",
-    "assets/json/lottie-3.json",
-    "assets/json/fire-1.json",
-    "assets/json/fire-2.json",
-    "assets/json/fire-3.json",
-    "assets/json/ping-loader.json",
-    "assets/json/festa.json"
-];
-
-function preloadLottieAnimations(paths) {
-    paths.forEach(path => {
-        const lottieContainer = document.createElement('div');
-        lottieContainer.classList.add('hidden');
-        document.body.appendChild(lottieContainer);
-        loadLottieAnimation(lottieContainer, path);
-    });
-}
-
-preloadLottieAnimations(lottieAnimationPaths);
