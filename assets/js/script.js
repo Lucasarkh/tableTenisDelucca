@@ -24,10 +24,28 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     }, 100);
-
+    const loaderText = document.querySelector(".loader-text");
     const loader = document.querySelector(".loader");
     const pageRanking = document.querySelector(".page-ranking");
+    
+    const messages = [
+        "Preparando saque",
+        "Ajustando a redinha",
+        "Verificando a raquete",
+        "Devolvendo com efeito",
+        "Verificando a mesa"
+    ];
+    
+    let index = 0;
+    
+    function displayMessage() {
+        loaderText.textContent = messages[index];
+        index = (index + 1) % messages.length;
+    }
+        const intervalId = setInterval(displayMessage, 1000);
+    
     setTimeout(() => {
+        clearInterval(intervalId); 
         if (loader.style.display === "flex") {
             body.style.overflow = "hidden";
         } else {
@@ -110,6 +128,8 @@ function calcularTotalVitoriasAteData(jogador, data) {
     return totalVitorias;
 }
 
+
+
 function atualizarUI(jogadores) {
     for (let i = 0; i < jogadores.length; i++) {
         const jogador = jogadores[i];
@@ -120,22 +140,23 @@ function atualizarUI(jogadores) {
 
         const marcador = marcadores[datas[datas.length - 1]] || neutralMarker;
 
+
+
         let totalVitorias = 0;
         for (const data in jogador.vitorias) {
             totalVitorias += jogador.vitorias[data];
-            if (totalVitorias > 0 && innerWidth > 1024) {
+            if (totalVitorias > 0 || innerWidth > 1024) {
                 podium.style.height = "540px";
                 podium.style.borderBottom = "4px solid rgb(95, 95, 95)";
             } else {
                 podium.style.height = "auto";
+                podium.style.borderBottom = "none";
             }
         }
-        function responsiveBreak () {
-            if (innerWidth < 1024) {
-                return `<br>`;
-            } 
-        }
+
+
         if (i === 0 && totalVitorias > 0) {
+            
             const jogadorNome = jogador.nome;
             podium.innerHTML += `
             <div class="col-12 col-lg-3" id="podium">
@@ -149,7 +170,7 @@ function atualizarUI(jogadores) {
                     <div class="identificador">
                         <h4 class="nomeJogador">${jogador.nome}</h4>
                         <div class="vitorias">
-                            <h4>Vitórias:${responsiveBreak()}<span> ${totalVitorias}</span></h4>
+                            <h4>Vitórias:<br class="d-lg-none"> <span> ${totalVitorias}</span></h4>
                     </div>
                 </div>
             </div>
@@ -171,8 +192,8 @@ function atualizarUI(jogadores) {
                     <div class="identificador">
                         <h4 class="nomeJogador">${jogador.nome}</h4>
                         <div class="vitorias">
-                            <h4>Vitórias:${responsiveBreak()}<span> ${totalVitorias}</span></h4>
-                    </div>
+                        <h4>Vitórias:<br class="d-lg-none"> <span> ${totalVitorias}</span></h4>
+                        </div>
                 </div>
             </div>
             <div class="bar col-lg-3">
@@ -193,8 +214,8 @@ function atualizarUI(jogadores) {
                     <div class="identificador">
                         <h4 class="nomeJogador">${jogador.nome}</h4>
                         <div class="vitorias">
-                            <h4>Vitórias:${responsiveBreak()}<span> ${totalVitorias}</span></h4>
-                    </div>
+                        <h4>Vitórias:<br class="d-lg-none"> <span> ${totalVitorias}</span></h4>
+                        </div>
                 </div>
             </div>
             <div class="bar col-lg-3">
