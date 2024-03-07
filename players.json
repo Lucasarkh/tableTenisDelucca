@@ -2,7 +2,8 @@
   {
       "nome": "Lucas",
       "vitorias": {
-        "06/03/2024": 1
+        "06/03/2024": 2,
+        "07/03/2024": 0
 
       },
       "genero": "masculino",
@@ -11,7 +12,8 @@
   {
       "nome": "Arthur",
       "vitorias": {
-        "06/03/2024": 0
+        "06/03/2024": 0,
+        "07/03/2024": 0
       },
       "genero": "masculino",
       "avatar": "assets/imgs/players/arthur.jpg"
@@ -20,7 +22,8 @@
   {
       "nome": "Felps",
       "vitorias": {
-        "06/03/2024": 4
+        "06/03/2024": 4,
+        "07/03/2024": 5
       },
       "genero": "masculino",
       "avatar": "assets/imgs/players/felps.jpg"
@@ -28,7 +31,8 @@
   {
       "nome": "Roger",
       "vitorias": {
-        "06/03/2024": 0
+        "06/03/2024": 0,
+        "07/03/2024": 0
       },
       "genero": "masculino",
       "avatar": "assets/imgs/players/roger.jpg"
@@ -36,7 +40,8 @@
   {
       "nome": "Thales",
       "vitorias": {
-        "06/03/2024": 0
+        "06/03/2024": 0,
+        "07/03/2024": 0
       },
       "genero": "masculino",
       "avatar": "assets/imgs/players/thales.jpg"
@@ -44,7 +49,8 @@
   {
       "nome": "Vena",
       "vitorias": {
-        "06/03/2024": 0
+        "06/03/2024": 0,
+        "07/03/2024": 0
       },
       "genero": "masculino",
       "avatar": "assets/imgs/players/vena.jpg"
@@ -52,7 +58,8 @@
   {
       "nome": "Pedro Befi",
       "vitorias": {
-        "06/03/2024": 1
+        "06/03/2024": 1,
+        "07/03/2024": 1
 
       },
       "genero": "masculino",
@@ -61,7 +68,8 @@
   {
       "nome": "Pedro De Wit",
       "vitorias": {
-        "06/03/2024": 0
+        "06/03/2024": 0,
+        "07/03/2024": 0
 
       },
       "genero": "masculino",
@@ -70,7 +78,8 @@
   {
       "nome": "Luiz",
       "vitorias": {
-        "06/03/2024": 0
+        "06/03/2024": 0,
+        "07/03/2024": 0
 
       },
       "genero": "masculino",
@@ -79,7 +88,8 @@
   {
       "nome": "Japa",
       "vitorias": {
-        "06/03/2024": 0
+        "06/03/2024": 0,
+        "07/03/2024": 0
 
       },
       "genero": "masculino",
@@ -88,7 +98,8 @@
   {
       "nome": "Kenny",
       "vitorias": {
-        "06/03/2024": 0
+        "06/03/2024": 0,
+        "07/03/2024": 0
 
       },
       "genero": "masculino",
@@ -97,7 +108,8 @@
   {
       "nome": "Angélica",
       "vitorias": {
-        "03/03/2023": 0
+        "03/03/2023": 0,
+        "07/03/2024": 0
 
       },
       "genero": "feminino",
@@ -106,7 +118,8 @@
   {
       "nome": "Júlia",
       "vitorias": {
-        "03/03/2023": 0
+        "03/03/2023": 0,
+        "07/03/2024": 2
 
       },
       "genero": "feminino",
@@ -115,7 +128,8 @@
   {
       "nome": "Pâmela",
       "vitorias": {
-        "03/03/2023": 0
+        "03/03/2023": 0,
+        "07/03/2024": 0
 
       },
       "genero": "feminino",
@@ -124,7 +138,8 @@
   {
       "nome": "Thiago",
       "vitorias": {
-        "03/03/2023": 0
+        "03/03/2023": 0,
+        "07/03/2024": 1
 
       },
       "genero": "feminino",
@@ -133,7 +148,8 @@
   {
       "nome": "Brito",
       "vitorias": {
-        "03/03/2023": 0
+        "03/03/2023": 0,
+        "07/03/2024": 1
 
       },
       "genero": "feminino",
