@@ -129,7 +129,17 @@
       },
       "genero": "feminino",
       "avatar": "assets/imgs/players/thiago.jpg"
+  },
+  {
+      "nome": "Brito",
+      "vitorias": {
+        "03/03/2023": 0
+
+      },
+      "genero": "feminino",
+      "avatar": "assets/imgs/players/brito.jpg"
   }
+
   
 ]
     
