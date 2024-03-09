@@ -7,12 +7,12 @@ const avatarMulher = "assets/imgs/avatar-mulher.jpg";
 const upMarker = "assets/imgs/up.svg";
 const downMarker = "assets/imgs/down.svg";
 const neutralMarker = "assets/imgs/neutral.svg";
+let rankingDisplay = document.querySelector(".ranking-display");
 
 function loadLottieAnimation(containerSelector, animationPath) {
     setTimeout(function () {
         var container = document.querySelector(containerSelector);
         if (!container) {
-            console.error("Container não encontrado:", containerSelector);
             return;
         }
         bodymovin.loadAnimation({
@@ -25,40 +25,17 @@ function loadLottieAnimation(containerSelector, animationPath) {
     }, 100);
 }
 
-setTimeout(() => {
-    loadLottieAnimation(".lottie-one", "assets/json/winner.json");
-    loadLottieAnimation(".lottie-two", "assets/json/lottie-2.json");
-    loadLottieAnimation(".lottie-three", "assets/json/lottie-3.json");
-    loadLottieAnimation(".fire-1", "assets/json/fire-1.json");
-    loadLottieAnimation(".fire-2", "assets/json/fire-2.json");
-    loadLottieAnimation(".fire-3", "assets/json/fire-3.json");
-    loadLottieAnimation(".ping-loader", "assets/json/ping-loader.json");
-    loadLottieAnimation(".festa", "assets/json/festa.json");
-}, 500);
-
 podium.style.height = "0px";
-    podium.style.border = "none";
-    setTimeout(() => {
-        const score = document.querySelectorAll(".score");
-        score.forEach((element, index) => {
-            if (index === 0) {
-                element.style.borderRadius = "16px 16px 0 0";
-            }
-            if (index % 2 === 0) {
-                element.style.backgroundColor = "rgb(128, 128, 128, 0.6)";
-            } else {
-                element.style.backgroundColor = "rgb(128, 128, 128, 0.8)";
-            }
-        });
-    }, 600);
+podium.style.border = "none";
+
+let loaderCtn = document.querySelector(".ranking-loader");
 
 document.addEventListener("DOMContentLoaded", function () {
-    
     const loaderText = document.querySelector(".loader-text");
     const loader = document.querySelector(".loader");
     const pageRanking = document.querySelector(".page-ranking");
 
-    const messages = ["Preparando saque", "Ajustando a redinha", "Verificando a raquete", "Devolvendo com efeito", "Verificando a mesa"];
+    const messages = ["Ajustando a redinha", "Verificando a raquete", "Preparando saque", "Devolvendo com efeito", "Verificando a mesa"];
 
     let index = 0;
 
@@ -77,13 +54,12 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         loader.style.display = "none";
     }, 4500);
-    const loaderCtn = document.querySelector(".ranking-loader");
+
 
     setTimeout(() => {
         pageRanking.style.display = "block";
         loaderCtn.style.display = "none";
     }, 5500);
-    console.log(loaderCtn);
 });
 
 function lerJogadores(callback) {
@@ -105,8 +81,6 @@ function atualizarPosicoes(jogadores) {
     Object.keys(jogadores[0].vitorias)
         .sort()
         .forEach((data, index, datas) => {
-            console.log(`Processando data ${data}`);
-
             jogadores.forEach((jogador) => {
                 if (!jogador.marcadores) {
                     jogador.marcadores = {};
@@ -121,7 +95,6 @@ function atualizarPosicoes(jogadores) {
                 jogadores.forEach((jogador) => {
                     const posicaoAtual = rankingAtual.findIndex((r) => r.nome === jogador.nome);
                     const posicaoAnterior = rankingAnterior.findIndex((r) => r.nome === jogador.nome);
-                    console.log(`Jogador ${jogador.nome} na data ${data}: Posição ${posicaoAtual + 1}`);
 
                     if (posicaoAtual < posicaoAnterior) {
                         jogador.marcadores[data] = upMarker;
@@ -159,8 +132,21 @@ function calcularTotalVitoriasAteData(jogador, data) {
 }
 
 function atualizarUI(jogadores) {
+    loadLottieAnimation(".lottie-one", "assets/json/winner.json");
+    loadLottieAnimation(".lottie-two", "assets/json/lottie-2.json");
+    loadLottieAnimation(".lottie-three", "assets/json/lottie-3.json");
+    loadLottieAnimation(".fire-1", "assets/json/fire-1.json");
+    loadLottieAnimation(".fire-2", "assets/json/fire-2.json");
+    loadLottieAnimation(".fire-3", "assets/json/fire-3.json");
+    loadLottieAnimation(".ping-loader", "assets/json/ping-loader.json");
+    loadLottieAnimation(".festa", "assets/json/festa.json");
+
+
+    
+    podium.innerHTML = "";
+    scoreBoard.innerHTML = "";
     for (let i = 0; i < jogadores.length; i++) {
-        const jogador = jogadores[i];
+        var jogador = jogadores[i];
         const marcadores = jogador.marcadores || {};
         const datas = Object.keys(marcadores);
 
@@ -168,10 +154,10 @@ function atualizarUI(jogadores) {
 
         const marcador = marcadores[datas[datas.length - 1]] || neutralMarker;
 
-        let totalVitorias = 0;
+        let vitorias = 0;
         for (const data in jogador.vitorias) {
-            totalVitorias += jogador.vitorias[data];
-            if (totalVitorias > 0 || innerWidth > 1024) {
+            vitorias += jogador.vitorias[data];
+            if (vitorias > 0 || innerWidth > 1024) {
                 podium.style.height = "540px";
                 podium.style.borderBottom = "4px solid rgb(95, 95, 95)";
             } else {
@@ -179,12 +165,21 @@ function atualizarUI(jogadores) {
                 podium.style.borderBottom = "none";
             }
         }
+        let totalVitorias = jogador.totalVitorias;
 
-        if (i === 0 && totalVitorias > 0) {
+        if (i === 0 && vitorias > 0) {
             const jogadorNome = jogador.nome;
             podium.innerHTML += `
             <div class="col-12 col-lg-3" id="podium">
                 <div id="lottie">
+                    <div class="card-info">
+                        <div><img class="avatar" src="${jogador.avatar}" alt="avatar" /></div>
+                        <div class="info">
+                            <div class="title">Perfil de ${jogador.nome}</div>
+                            <div>Vitórias na carreira: ${totalVitorias}</div>
+                            <div>Estilo de jogo: ${jogador.estilo}</div>
+                        </div>
+                    </div>
                     <div class="d-flex d-lg-none position-absolute player-position"><span>${i + 1}º</span></div>
                     <div class="festa"></div>
                     <div class="lottie-one lottie"></div>
@@ -194,7 +189,7 @@ function atualizarUI(jogadores) {
                     <div class="identificador">
                         <h4 class="nomeJogador">${jogador.nome}</h4>
                         <div class="vitorias">
-                            <h4>Vitórias:<br class="d-lg-none"> <span> ${totalVitorias}</span></h4>
+                            <h4>Vitórias:<br class="d-lg-none"> <span> ${vitorias}</span></h4>
                     </div>
                 </div>
             </div>
@@ -204,10 +199,18 @@ function atualizarUI(jogadores) {
                 <div class="fire-1"></div>
             </div>
             `;
-        } else if (i === 1 && totalVitorias > 0) {
+        } else if (i === 1 && vitorias > 0) {
             podium.innerHTML += `
             <div class="col-12 col-lg-3" id="podium">
                 <div id="lottie">
+                    <div class="card-info">
+                        <div><img class="avatar" src="${jogador.avatar}" alt="avatar" /></div>
+                        <div class="info">
+                            <div class="title">Perfil de ${jogador.nome}</div>
+                            <div>Vitórias na carreira: ${totalVitorias}</div>
+                            <div>Estilo de jogo: ${jogador.estilo}</div>
+                        </div>
+                    </div>
                     <div class="d-flex d-lg-none position-absolute player-position"><span>${i + 1}º</span></div>
                     <div class="lottie-two lottie"></div>
                     <div class="avatar">
@@ -216,7 +219,7 @@ function atualizarUI(jogadores) {
                     <div class="identificador">
                         <h4 class="nomeJogador">${jogador.nome}</h4>
                         <div class="vitorias">
-                        <h4>Vitórias:<br class="d-lg-none"> <span> ${totalVitorias}</span></h4>
+                        <h4>Vitórias:<br class="d-lg-none"> <span> ${vitorias}</span></h4>
                         </div>
                 </div>
             </div>
@@ -226,10 +229,18 @@ function atualizarUI(jogadores) {
                 <div class="fire-2"></div>
             </div>
         `;
-        } else if (i === 2 && totalVitorias > 0) {
+        } else if (i === 2 && vitorias > 0) {
             podium.innerHTML += `
             <div class="col-12 col-lg-3" id="podium">
                 <div id="lottie">
+                    <div class="card-info">
+                        <div><img class="avatar" src="${jogador.avatar}" alt="avatar" /></div>
+                        <div class="info">
+                            <div class="title">Perfil de ${jogador.nome}</div>
+                            <div>Vitórias na carreira: ${totalVitorias}</div>
+                            <div>Estilo de jogo: ${jogador.estilo}</div>
+                        </div>
+                    </div>
                     <div class="d-flex d-lg-none position-absolute player-position"><span>${i + 1}º</span></div>
                     <div class="lottie-three lottie"></div>
                     <div class="avatar">
@@ -238,7 +249,7 @@ function atualizarUI(jogadores) {
                     <div class="identificador">
                         <h4 class="nomeJogador">${jogador.nome}</h4>
                         <div class="vitorias">
-                        <h4>Vitórias:<br class="d-lg-none"> <span> ${totalVitorias}</span></h4>
+                        <h4>Vitórias:<br class="d-lg-none"> <span> ${vitorias}</span></h4>
                         </div>
                 </div>
             </div>
@@ -250,7 +261,7 @@ function atualizarUI(jogadores) {
             `;
         } else {
             function content() {
-                if (totalVitorias === 0) {
+                if (vitorias === 0) {
                     return "-";
                 } else {
                     return i + 1 + "º";
@@ -261,24 +272,93 @@ function atualizarUI(jogadores) {
                 <h4 class="col-lg-2 marker-ctn">
                 <img src="${marcador}" alt="marker" class="marker">
                 ${content()}</h4>
-                <div class="col-lg-4 ctn-img"><img class="avatar" src="${jogador.avatar}" alt="avatar" /> ${jogador.nome}</div>
-                <h4 class="col-lg-4"> ${totalVitorias}</h4>
+                <div class="col-lg-4 ctn-img">
+                <div class="card-info">
+                        <div><img class="avatar" src="${jogador.avatar}" alt="avatar" /></div>
+                        <div class="info">
+                            <div class="title">Perfil de ${jogador.nome}</div>
+                            <div>Vitórias na carreira: ${totalVitorias}</div>
+                            <div>Estilo de jogo: ${jogador.estilo}</div>
+                        </div>
+                    </div>
+                    <img class="avatar" src="${jogador.avatar}" alt="avatar" /> 
+                    <div>${jogador.nome}</div>
+                    
+                </div>
+                <h4 class="col-lg-4"> ${vitorias}</h4>
             </div>
         `;
         }
     }
+    const score = document.querySelectorAll(".score");
+    score.forEach((element, index) => {
+        if (index === 0) {
+            element.style.borderRadius = "16px 16px 0 0";
+        }
+        if (index % 2 === 0) {
+            element.style.backgroundColor = "rgb(128, 128, 128, 0.6)";
+        } else {
+            element.style.backgroundColor = "rgb(128, 128, 128, 0.8)";
+        }
+    });
 }
 
-lerJogadores((err, jogadores) => {
+lerJogadores((err, jogadores, listaDinamica) => {
     if (err) {
-        console.error("Erro ao ler os dados dos jogadores:", err);
     } else {
-        console.log("Dados dos jogadores:", jogadores);
         jogadores.sort((a, b) => {
             const totalVitoriasA = Object.values(a.vitorias).reduce((acc, cur) => acc + cur, 0);
             const totalVitoriasB = Object.values(b.vitorias).reduce((acc, cur) => acc + cur, 0);
             return totalVitoriasB - totalVitoriasA;
         });
+
+        var jogadorasFeminino = [];
+
+        var listaDinamica = [];
+
+        jogadores.forEach((jogador) => {
+            if (jogador.genero === "feminino") {
+                jogadorasFeminino.push(jogador);
+            }
+        });
+
+        jogadores.forEach((jogador) => {
+            listaDinamica.push(jogador);
+        });
+
+        const btnGeral = document.querySelector(".btn-geral");
+        const btnFeminino = document.querySelector(".btn-feminino");
+
+        btnGeral.addEventListener("click", () => {
+            btnFeminino.classList.remove("activeFeminino");
+            btnGeral.classList.add("active");
+            rankingDisplay.style.opacity = "0";
+            loaderCtn.style.display = "flex";
+            listaDinamica = [];
+            listaDinamica = jogadores;
+            atualizarPosicoes(listaDinamica);
+            atualizarUI(listaDinamica);
+            setTimeout(() => {
+                rankingDisplay.style.opacity = "1";
+                loaderCtn.style.display = "none";
+            }, 500);
+        });
+
+        btnFeminino.addEventListener("click", () => {
+            btnFeminino.classList.add("activeFeminino");
+            btnGeral.classList.remove("active");
+            rankingDisplay.style.opacity = "0";
+            loaderCtn.style.display = "flex";
+            listaDinamica = [];
+            listaDinamica = jogadorasFeminino;
+            atualizarPosicoes(listaDinamica);
+            atualizarUI(listaDinamica);
+            setTimeout(() => {
+                rankingDisplay.style.opacity = "1";
+                loaderCtn.style.display = "none";
+            }, 500);
+        });
+
         atualizarPosicoes(jogadores);
         atualizarUI(jogadores);
     }

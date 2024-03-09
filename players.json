@@ -8,7 +8,9 @@
 
       },
       "genero": "masculino",
-      "avatar": "assets/imgs/players/lucas.jpg"
+      "avatar": "assets/imgs/players/lucas.jpg",
+      "totalVitorias": 12,
+      "estilo": "Caneta"
   },
   {
       "nome": "Arthur",
@@ -19,7 +21,9 @@
 
       },
       "genero": "masculino",
-      "avatar": "assets/imgs/players/arthur.jpg"
+      "avatar": "assets/imgs/players/arthur.jpg",
+      "totalVitorias": 1,
+      "estilo": "Classineta"      
       
   },
   {
@@ -28,10 +32,11 @@
         "06/03/2024": 4,
         "07/03/2024": 5,
         "08/03/2024": 14
-
       },
       "genero": "masculino",
-      "avatar": "assets/imgs/players/felps.jpg"
+      "avatar": "assets/imgs/players/felps.jpg",
+      "totalVitorias": 23,
+      "estilo": "Clássico"
   },
   {
       "nome": "Roger",
@@ -42,7 +47,9 @@
 
       },
       "genero": "masculino",
-      "avatar": "assets/imgs/players/roger.jpg"
+      "avatar": "assets/imgs/players/roger.jpg",
+      "totalVitorias": 0,
+      "estilo": "Classineta"
   },
   {
       "nome": "Thales",
@@ -50,10 +57,11 @@
         "06/03/2024": 0,
         "07/03/2024": 0,
         "08/03/2024": 1
-
       },
       "genero": "masculino",
-      "avatar": "assets/imgs/players/thales.jpg"
+      "avatar": "assets/imgs/players/thales.jpg",
+      "totalVitorias": 1,
+      "estilo": "Classineta"
   },
   {
       "nome": "Vena",
@@ -64,7 +72,9 @@
 
       },
       "genero": "masculino",
-      "avatar": "assets/imgs/players/vena.jpg"
+      "avatar": "assets/imgs/players/vena.jpg",
+      "totalVitorias": 0,
+      "estilo": "Classineta"
   },
   {
       "nome": "Pedro Befi",
@@ -72,11 +82,11 @@
         "06/03/2024": 1,
         "07/03/2024": 1,
         "08/03/2024": 3
-
-
       },
       "genero": "masculino",
-      "avatar": "assets/imgs/players/pedro-befi.jpg"
+      "avatar": "assets/imgs/players/pedro-befi.jpg",
+      "totalVitorias": 5,
+      "estilo": "Clássico"
   },
   {
       "nome": "Pedro De Wit",
@@ -84,11 +94,11 @@
         "06/03/2024": 0,
         "07/03/2024": 0,
         "08/03/2024": 0
-
-
       },
       "genero": "masculino",
-      "avatar": "assets/imgs/players/pedro-de-wit.jpg"
+      "avatar": "assets/imgs/players/pedro-de-wit.jpg",
+      "totalVitorias": 0,
+      "estilo": "Clássico"
   },
   {
       "nome": "Luiz",
@@ -96,11 +106,11 @@
         "06/03/2024": 0,
         "07/03/2024": 0,
         "08/03/2024": 0
-
-
       },
       "genero": "masculino",
-      "avatar": "assets/imgs/players/luiz.jpg"
+      "avatar": "assets/imgs/players/luiz.jpg",
+      "totalVitorias": 0,
+      "estilo": "Clássico"
   },
   {
       "nome": "Japa",
@@ -108,11 +118,11 @@
         "06/03/2024": 0,
         "07/03/2024": 0,
         "08/03/2024": 0
-
-
       },
       "genero": "masculino",
-      "avatar": "assets/imgs/players/japa.jpg"
+      "avatar": "assets/imgs/players/japa.jpg",
+      "totalVitorias": 0,
+      "estilo": "Clássico"
   },
   {
       "nome": "Kenny",
@@ -120,11 +130,11 @@
         "06/03/2024": 0,
         "07/03/2024": 0,
         "08/03/2024": 0
-
-
       },
       "genero": "masculino",
-      "avatar": "assets/imgs/players/kenny.jpg"
+      "avatar": "assets/imgs/players/kenny.jpg",
+      "totalVitorias": 0,
+      "estilo": "Classineta"
   },
   {
       "nome": "Angélica",
@@ -132,11 +142,11 @@
         "03/03/2023": 0,
         "07/03/2024": 1,
         "08/03/2024": 1
-
-
       },
       "genero": "feminino",
-      "avatar": "assets/imgs/players/angelica.jpg"
+      "avatar": "assets/imgs/players/angelica.jpg",
+      "totalVitorias": 2,
+      "estilo": "Classineta"
   },
   {
       "nome": "Júlia",
@@ -144,11 +154,11 @@
         "03/03/2023": 0,
         "07/03/2024": 2,
         "08/03/2024": 0
-
-
       },
       "genero": "feminino",
-      "avatar": "assets/imgs/players/julia.jpg"
+      "avatar": "assets/imgs/players/julia.jpg",
+      "totalVitorias": 2,
+      "estilo": "Caneta"
   },
   {
       "nome": "Pâmela",
@@ -156,11 +166,11 @@
         "03/03/2023": 0,
         "07/03/2024": 0,
         "08/03/2024": 1
-
-
       },
       "genero": "feminino",
-      "avatar": "assets/imgs/players/pamela.jpg"
+      "avatar": "assets/imgs/players/pamela.jpg",
+      "totalVitorias": 1,
+      "estilo": "Clássico"
   },
   {
       "nome": "Thiago",
@@ -168,11 +178,11 @@
         "03/03/2023": 0,
         "07/03/2024": 1,
         "08/03/2024": 0
-
-
       },
       "genero": "masculino",
-      "avatar": "assets/imgs/players/thiago.jpg"
+      "avatar": "assets/imgs/players/thiago.jpg",
+      "totalVitorias": 1,
+      "estilo": "Classineta"
   },
   {
       "nome": "Brito",
@@ -180,11 +190,11 @@
         "03/03/2023": 0,
         "07/03/2024": 1,
         "08/03/2024": 0
-
-
       },
       "genero": "masculino",
-      "avatar": "assets/imgs/players/brito.jpg"
+      "avatar": "assets/imgs/players/brito.jpg",
+      "totalVitorias": 1,
+      "estilo": "Classineta"
   },
   {
       "nome": "Isabela",
@@ -192,11 +202,11 @@
         "03/03/2023": 0,
         "07/03/2024": 0,
         "08/03/2024": 0
-
-
       },
       "genero": "feminino",
-      "avatar": "assets/imgs/players/isabela.jpg"
+      "avatar": "assets/imgs/players/isabela.jpg",
+      "totalVitorias": 0,
+      "estilo": "Classineta"
   }
 
   

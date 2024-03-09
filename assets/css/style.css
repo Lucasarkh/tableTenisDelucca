@@ -1,4 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Madimi+One&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Caveat+Brush&display=swap');
+
 
 * {
     margin: 0;
@@ -79,6 +81,7 @@ header nav ul {
     gap: 16px;
     border-bottom: 4px solid rgb(95, 95, 95);
     width: 100%;
+    overflow: visible;
 }
 #podium {
     height: fit-content;
@@ -263,7 +266,6 @@ header nav ul {
 }
 .scoreboard .score:last-of-type {
     border-radius: 0 0 16px 16px;
-    overflow: hidden;
 }
 .tittle {
     display: flex;
@@ -286,11 +288,66 @@ header nav ul {
     align-items: center;
     padding: 8px;
 }
+.score:hover {
+    z-index: 2;
+}
 .score .ctn-img {
     position: relative;
     text-align: start;
     width: 132px;
     transform: translateX(16px);
+    z-index: 1;
+}
+
+.score .card-info,
+#lottie .card-info {
+    position: absolute;
+    display: flex;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 32px;
+    height: 112px;
+    width: max-content;
+    background-color: rgba(0, 0, 0);
+    display: none;
+    border-radius: 8px;
+    overflow: hidden;
+    z-index: 2;
+}
+#lottie .card-info {
+    right: -136px;
+    z-index: 2;
+}
+.card-info .info {
+    padding: 16px 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    gap: 6px;
+}
+.card-info .title {
+    color: rgb(255, 255, 168);
+    text-transform: uppercase;
+    border-bottom: 2px solid rgb(255, 255, 168);
+}
+.score .ctn-img .card-info .avatar,
+#lottie .card-info .avatar {
+    position: unset !important;
+    width: unset;
+    height: 100%;
+    overflow: hidden;
+    border-radius: unset;
+    position: absolute;
+    top: unset;
+    right: unset;
+    left: unset;
+    transform: unset;
+    animation: none;
+}
+.score .ctn-img:hover .card-info,
+#lottie:hover .card-info {
+    display: flex;
 }
 .score h4 {
     text-align: center;
@@ -305,6 +362,7 @@ header nav ul {
     height: 32px;
     animation: none;
 }
+
 .ranking-loader {
     position: absolute;
     top: 0;
@@ -342,6 +400,36 @@ header nav ul {
     --s:-1;
     animation-delay: -.5s;
   }
+.ranking-btns {
+    display: flex;
+    gap: 8px;
+    justify-content: start;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+}
+.ranking-btns button {
+    padding: 8px 16px;
+    border-radius: 8px;
+    background-color: rgb(0, 0, 0, 0.6);
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+    transition: .3s;
+}
+.ranking-btns button:hover {
+    background-color: rgb(0, 0, 0, 0.8);
+}
+.active {
+    background-color: rgb(0, 0, 0, 0.8) !important;
+    color: white !important;
+    border: 2px solid rgb(255, 255, 255, 0.6) !important;
+}
+.activeFeminino {
+    background-color: rgb(0, 0, 0, 0.8) !important;
+    color: white !important;
+    border: 2px solid rgba(249, 85, 255, 0.6) !important;
+}
   
   @keyframes l49 {
     58%,
@@ -463,12 +551,20 @@ header nav ul {
         }
     }
     .loader-ctn {
-        --_g: no-repeat radial-gradient(farthest-side,#5a5a5a 90%,#0000);
-      }
-      .loader-ctn:before,
-      .loader-ctn:after {
-        background: #5a5a5a;
-      }
+      --_g: no-repeat radial-gradient(farthest-side,#5a5a5a 90%,#0000);
+    }
+    .loader-ctn:before,
+    .loader-ctn:after {
+      background: #5a5a5a;
+    }
+    .score .ctn-img:hover .card-info,
+    #lottie:hover .card-info {
+        display: none;
+    }
+    .ranking-btns {
+        justify-content: center;
+    }
+      
 }
 
 @media (max-width: 374px) {
