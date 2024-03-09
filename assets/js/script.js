@@ -143,8 +143,6 @@ function atualizarUI(jogadores) {
     loadLottieAnimation(".fire-3-mobile", "assets/json/fire-3.json");
     loadLottieAnimation(".ping-loader", "assets/json/ping-loader.json");
     loadLottieAnimation(".festa", "assets/json/festa.json");
-
-
     
     podium.innerHTML = "";
     scoreBoard.innerHTML = "";
@@ -161,7 +159,7 @@ function atualizarUI(jogadores) {
         for (const data in jogador.vitorias) {
             vitorias += jogador.vitorias[data];
             if (vitorias > 0 || innerWidth > 1024) {
-                podium.style.height = "540px";
+                podium.style.height = "550px";
                 podium.style.borderBottom = "4px solid rgb(95, 95, 95)";
             } else {
                 podium.style.height = "auto";
@@ -341,9 +339,9 @@ lerJogadores((err, jogadores, listaDinamica) => {
 
 
         btnGeral.addEventListener("click", () => {
-            btnFeminino.classList.remove("activeFeminino");
-            btnMasculino.classList.remove("activeMasculino");
             btnGeral.classList.add("active");
+            btnFeminino.classList.remove("active");
+            btnMasculino.classList.remove("active");
             rankingDisplay.style.opacity = "0";
             loaderCtn.style.display = "flex";
             listaDinamica = [];
@@ -357,9 +355,9 @@ lerJogadores((err, jogadores, listaDinamica) => {
         });
 
         btnFeminino.addEventListener("click", () => {
-            btnFeminino.classList.add("activeFeminino");
+            btnFeminino.classList.add("active");
+            btnMasculino.classList.remove("active");
             btnGeral.classList.remove("active");
-            btnMasculino.classList.remove("activeMasculino");
             rankingDisplay.style.opacity = "0";
             loaderCtn.style.display = "flex";
             listaDinamica = [];
@@ -372,9 +370,9 @@ lerJogadores((err, jogadores, listaDinamica) => {
             }, 500);
         });
         btnMasculino.addEventListener("click", () => {
-            btnMasculino.classList.add("activeMasculino");
+            btnMasculino.classList.add("active");
+            btnFeminino.classList.remove("active");
             btnGeral.classList.remove("active");
-            btnFeminino.classList.remove("activeFeminino");
             rankingDisplay.style.opacity = "0";
             loaderCtn.style.display = "flex";
             listaDinamica = [];
@@ -392,8 +390,46 @@ lerJogadores((err, jogadores, listaDinamica) => {
     }
 });
 
+var animacao;
+var toggle = false;
+let toggleMenu = document.getElementById('toggle-btn');
+let dropDown = document.querySelector('.mobile-dropdown');
+let btnMenu = document.querySelectorAll('.btn-menu');
+
+function carregarAnimacao() {
+    animacao = bodymovin.loadAnimation({
+        container: toggleMenu,
+        renderer: 'svg',
+        loop: false,
+        autoplay: false,
+        path: 'assets/json/close.json'
+    });
+    
+    document.getElementById('toggle-btn').addEventListener('click', toggleAnimacao);
+}
+
+for (let i = 0; i < btnMenu.length; i++) {
+    btnMenu[i].addEventListener('click', toggleAnimacao);
+}
+
+function toggleAnimacao() {
+    if (!toggle) {
+        animacao.playSegments([0, 120], true);
+        dropDown.classList.remove('inactive-dropdown');
+        dropDown.classList.add('active-dropdown');
+    } else {
+        animacao.playSegments([120, 170], true);
+        dropDown.classList.remove('active-dropdown');
+        dropDown.classList.add('inactive-dropdown');
+    }
+    toggle = !toggle;
+}
+if (window.innerWidth < 1024) {
+    carregarAnimacao();
+}
+
 window.addEventListener("resize", () => {
-    if (window.innerWidth > 768) {
+    if (window.innerWidth > 1024) {
         location.reload();
     }
 })
