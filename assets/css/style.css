@@ -430,7 +430,29 @@ header nav ul {
     color: white !important;
     border: 2px solid rgba(249, 85, 255, 0.6) !important;
 }
-  
+.activeMasculino {
+    background-color: rgb(0, 0, 0, 0.8) !important;
+    color: white !important;
+    border: 2px solid rgba(85, 96, 255, 0.6) !important;
+}
+.fire-1-mobile,
+.fire-2-mobile,
+.fire-3-mobile {
+    position: absolute;
+    bottom: 10px;
+    left: -16px;
+    width: 80px;
+}
+.fire-1-mobile {
+    width: 120px;
+    bottom: 6px;
+    left: -36px;
+}
+.fire-2-mobile {
+    width: 100px;
+    bottom: 8px;
+    left: -24px;
+}
   @keyframes l49 {
     58%,
     100% {transform: rotate(calc(var(--s,1)*1turn))}
@@ -563,6 +585,9 @@ header nav ul {
     }
     .ranking-btns {
         justify-content: center;
+    }
+    .festa {
+        top: 0px;
     }
       
 }

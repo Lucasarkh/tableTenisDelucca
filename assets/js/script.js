@@ -138,6 +138,9 @@ function atualizarUI(jogadores) {
     loadLottieAnimation(".fire-1", "assets/json/fire-1.json");
     loadLottieAnimation(".fire-2", "assets/json/fire-2.json");
     loadLottieAnimation(".fire-3", "assets/json/fire-3.json");
+    loadLottieAnimation(".fire-1-mobile", "assets/json/fire-1.json");
+    loadLottieAnimation(".fire-2-mobile", "assets/json/fire-2.json");
+    loadLottieAnimation(".fire-3-mobile", "assets/json/fire-3.json");
     loadLottieAnimation(".ping-loader", "assets/json/ping-loader.json");
     loadLottieAnimation(".festa", "assets/json/festa.json");
 
@@ -180,6 +183,7 @@ function atualizarUI(jogadores) {
                             <div>Estilo de jogo: ${jogador.estilo}</div>
                         </div>
                     </div>
+                    <div class="fire-1-mobile d-lg-none"></div>
                     <div class="d-flex d-lg-none position-absolute player-position"><span>${i + 1}º</span></div>
                     <div class="festa"></div>
                     <div class="lottie-one lottie"></div>
@@ -211,6 +215,7 @@ function atualizarUI(jogadores) {
                             <div>Estilo de jogo: ${jogador.estilo}</div>
                         </div>
                     </div>
+                    <div class="fire-2-mobile d-lg-none"></div>
                     <div class="d-flex d-lg-none position-absolute player-position"><span>${i + 1}º</span></div>
                     <div class="lottie-two lottie"></div>
                     <div class="avatar">
@@ -241,6 +246,7 @@ function atualizarUI(jogadores) {
                             <div>Estilo de jogo: ${jogador.estilo}</div>
                         </div>
                     </div>
+                    <div class="fire-3-mobile d-lg-none"></div>
                     <div class="d-flex d-lg-none position-absolute player-position"><span>${i + 1}º</span></div>
                     <div class="lottie-three lottie"></div>
                     <div class="avatar">
@@ -292,8 +298,10 @@ function atualizarUI(jogadores) {
     }
     const score = document.querySelectorAll(".score");
     score.forEach((element, index) => {
-        if (index === 0) {
+        if (index === 0 && jogadores.length > 4) {
             element.style.borderRadius = "16px 16px 0 0";
+        } else if (index === 0 && jogadores.length <= 4) {
+            element.style.borderRadius = "16px 16px 16px 16px";
         }
         if (index % 2 === 0) {
             element.style.backgroundColor = "rgb(128, 128, 128, 0.6)";
@@ -314,23 +322,27 @@ lerJogadores((err, jogadores, listaDinamica) => {
 
         var jogadorasFeminino = [];
 
+        var jogadoresMasculino = [];
+
         var listaDinamica = [];
 
         jogadores.forEach((jogador) => {
             if (jogador.genero === "feminino") {
                 jogadorasFeminino.push(jogador);
+            } else if (jogador.genero === "masculino") {
+                jogadoresMasculino.push(jogador);
             }
         });
 
-        jogadores.forEach((jogador) => {
-            listaDinamica.push(jogador);
-        });
 
         const btnGeral = document.querySelector(".btn-geral");
         const btnFeminino = document.querySelector(".btn-feminino");
+        const btnMasculino = document.querySelector(".btn-masculino");
+
 
         btnGeral.addEventListener("click", () => {
             btnFeminino.classList.remove("activeFeminino");
+            btnMasculino.classList.remove("activeMasculino");
             btnGeral.classList.add("active");
             rankingDisplay.style.opacity = "0";
             loaderCtn.style.display = "flex";
@@ -347,10 +359,26 @@ lerJogadores((err, jogadores, listaDinamica) => {
         btnFeminino.addEventListener("click", () => {
             btnFeminino.classList.add("activeFeminino");
             btnGeral.classList.remove("active");
+            btnMasculino.classList.remove("activeMasculino");
             rankingDisplay.style.opacity = "0";
             loaderCtn.style.display = "flex";
             listaDinamica = [];
             listaDinamica = jogadorasFeminino;
+            atualizarPosicoes(listaDinamica);
+            atualizarUI(listaDinamica);
+            setTimeout(() => {
+                rankingDisplay.style.opacity = "1";
+                loaderCtn.style.display = "none";
+            }, 500);
+        });
+        btnMasculino.addEventListener("click", () => {
+            btnMasculino.classList.add("activeMasculino");
+            btnGeral.classList.remove("active");
+            btnFeminino.classList.remove("activeFeminino");
+            rankingDisplay.style.opacity = "0";
+            loaderCtn.style.display = "flex";
+            listaDinamica = [];
+            listaDinamica = jogadoresMasculino;
             atualizarPosicoes(listaDinamica);
             atualizarUI(listaDinamica);
             setTimeout(() => {
@@ -363,3 +391,9 @@ lerJogadores((err, jogadores, listaDinamica) => {
         atualizarUI(jogadores);
     }
 });
+
+window.addEventListener("resize", () => {
+    if (window.innerWidth > 768) {
+        location.reload();
+    }
+})
