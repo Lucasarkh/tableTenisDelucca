@@ -2,7 +2,9 @@
   {
       "nome": "Lucas",
       "vitorias": {
-        "11/03/2024": 0
+        "06/03/2024": 1,
+        "07/03/2024": 2,
+        "08/03/2024": 9
 
       },
       "genero": "masculino",
@@ -13,7 +15,9 @@
   {
       "nome": "Arthur",
       "vitorias": {
-        "11/03/2024": 0
+        "06/03/2024": 0,
+        "07/03/2024": 0,
+        "08/03/2024": 1
 
       },
       "genero": "masculino",
@@ -25,7 +29,9 @@
   {
       "nome": "Felps",
       "vitorias": {
-        "11/03/2024": 0
+        "06/03/2024": 4,
+        "07/03/2024": 5,
+        "08/03/2024": 14
       },
       "genero": "masculino",
       "avatar": "assets/imgs/players/felps.jpg",
@@ -35,7 +41,9 @@
   {
       "nome": "Roger",
       "vitorias": {
-        "11/03/2024": 0
+        "06/03/2024": 0,
+        "07/03/2024": 0,
+        "08/03/2024": 0
 
       },
       "genero": "masculino",
@@ -46,7 +54,9 @@
   {
       "nome": "Thales",
       "vitorias": {
-        "11/03/2024": 0
+        "06/03/2024": 0,
+        "07/03/2024": 0,
+        "08/03/2024": 1
       },
       "genero": "masculino",
       "avatar": "assets/imgs/players/thales.jpg",
@@ -56,7 +66,9 @@
   {
       "nome": "Vena",
       "vitorias": {
-        "11/03/2024": 0
+        "06/03/2024": 0,
+        "07/03/2024": 0,
+        "08/03/2024": 0
 
       },
       "genero": "masculino",
@@ -67,7 +79,9 @@
   {
       "nome": "Pedro Befi",
       "vitorias": {
-        "11/03/2024": 0
+        "06/03/2024": 1,
+        "07/03/2024": 1,
+        "08/03/2024": 3
       },
       "genero": "masculino",
       "avatar": "assets/imgs/players/pedro-befi.jpg",
@@ -77,7 +91,9 @@
   {
       "nome": "Pedro De Wit",
       "vitorias": {
-        "11/03/2024": 0
+        "06/03/2024": 0,
+        "07/03/2024": 0,
+        "08/03/2024": 0
       },
       "genero": "masculino",
       "avatar": "assets/imgs/players/pedro-de-wit.jpg",
@@ -87,7 +103,9 @@
   {
       "nome": "Luiz",
       "vitorias": {
-        "11/03/2024": 0
+        "06/03/2024": 0,
+        "07/03/2024": 0,
+        "08/03/2024": 0
       },
       "genero": "masculino",
       "avatar": "assets/imgs/players/luiz.jpg",
@@ -97,7 +115,9 @@
   {
       "nome": "Japa",
       "vitorias": {
-        "11/03/2024": 0
+        "06/03/2024": 0,
+        "07/03/2024": 0,
+        "08/03/2024": 0
       },
       "genero": "masculino",
       "avatar": "assets/imgs/players/japa.jpg",
@@ -107,7 +127,9 @@
   {
       "nome": "Kenny",
       "vitorias": {
-        "11/03/2024": 0
+        "06/03/2024": 0,
+        "07/03/2024": 0,
+        "08/03/2024": 0
       },
       "genero": "masculino",
       "avatar": "assets/imgs/players/kenny.jpg",
@@ -117,7 +139,9 @@
   {
       "nome": "Angélica",
       "vitorias": {
-        "11/03/2024": 0
+        "03/03/2023": 0,
+        "07/03/2024": 1,
+        "08/03/2024": 1
       },
       "genero": "feminino",
       "avatar": "assets/imgs/players/angelica.jpg",
@@ -127,7 +151,9 @@
   {
       "nome": "Júlia",
       "vitorias": {
-        "11/03/2024": 0
+        "03/03/2023": 0,
+        "07/03/2024": 2,
+        "08/03/2024": 0
       },
       "genero": "feminino",
       "avatar": "assets/imgs/players/julia.jpg",
@@ -137,7 +163,9 @@
   {
       "nome": "Pâmela",
       "vitorias": {
-        "11/03/2024": 0
+        "03/03/2023": 0,
+        "07/03/2024": 0,
+        "08/03/2024": 1
       },
       "genero": "feminino",
       "avatar": "assets/imgs/players/pamela.jpg",
@@ -147,7 +175,9 @@
   {
       "nome": "Thiago",
       "vitorias": {
-        "11/03/2024": 0
+        "03/03/2023": 0,
+        "07/03/2024": 1,
+        "08/03/2024": 0
       },
       "genero": "masculino",
       "avatar": "assets/imgs/players/thiago.jpg",
@@ -157,7 +187,9 @@
   {
       "nome": "Brito",
       "vitorias": {
-        "11/03/2024": 0
+        "03/03/2023": 0,
+        "07/03/2024": 1,
+        "08/03/2024": 0
       },
       "genero": "masculino",
       "avatar": "assets/imgs/players/brito.jpg",
@@ -167,7 +199,9 @@
   {
       "nome": "Isabela",
       "vitorias": {
-        "11/03/2024": 0
+        "03/03/2023": 0,
+        "07/03/2024": 0,
+        "08/03/2024": 0
       },
       "genero": "feminino",
       "avatar": "assets/imgs/players/isabela.jpg",

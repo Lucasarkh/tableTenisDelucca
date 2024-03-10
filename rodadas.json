@@ -1,0 +1,40 @@
+[
+    {
+        "rodada-1": {
+            "confrontos:": {
+                "06/03/2024": {
+                    "partida-1": {
+                        "jogador": "Lucas",
+                        "oponente": "Arthur",
+                        "vencedor": "Lucas",
+                        "pontos": 1
+                    },
+                    "partida-2": {
+                        "jogador": "Felps",
+                        "oponente": "Kenny",
+                        "vencedor": "Felps",
+                        "pontos": 1
+                    },
+                    "partida-3": {
+                        "jogador": "Isabela",
+                        "oponente": "Angélica",
+                        "vencedor": "Isabela",
+                        "pontos": 1
+                    },
+                    "partida-4": {
+                        "jogador": "Roger",
+                        "oponente": "Thales",
+                        "vencedor": "Roger",
+                        "pontos": 1
+                    },
+                    "partida-5": {
+                        "jogador": "Thiago",
+                        "oponente": "Arthur",
+                        "vencedor": "Thiago",
+                        "pontos": 1
+                    }
+                }
+            }
+        }
+    }
+]
