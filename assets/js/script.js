@@ -10,6 +10,10 @@ const neutralMarker = "assets/imgs/neutral.svg";
 let rankingDisplay = document.querySelector(".ranking-display");
 let ctnImg = document.querySelectorAll(".ctn-img");
 let cardInfo = document.querySelectorAll(".card-info");
+let navBar = document.querySelector("nav");
+
+let pageRanking = document.querySelector(".page-ranking");
+
 
 ctnImg.forEach((element) => {
     element.addEventListener("click", () => {
@@ -42,10 +46,12 @@ let loaderCtn = document.querySelector(".ranking-loader");
 
 loaderCtn.style.display = "none";
 
+
+
 document.addEventListener("DOMContentLoaded", function () {
     const loaderText = document.querySelector(".loader-text");
     const loader = document.querySelector(".loader");
-    const pageRanking = document.querySelector(".page-ranking");
+
 
     const messages = ["Ajustando a redinha", "Verificando a raquete", "Preparando saque", "Devolvendo com efeito", "Verificando a mesa"];
 
@@ -65,6 +71,8 @@ document.addEventListener("DOMContentLoaded", function () {
             body.style.overflow = "auto";
         }
         loader.style.display = "none";
+        navBar.style.display = "flex";
+        pageRanking.classList.add("page-ranking-margin");
     }, 4500);
 
 
