@@ -46,13 +46,17 @@ header nav {
     align-items: center;
     background-color: white;
     color: #fff;
+    z-index: 9;
+    top: 0;
+    left: 0;
+    width: 100%;
 }
 header nav ul {
     display: flex;
     list-style: none;
 }
 .page-ranking {
-    display: none;
+    margin-top: 80px;
 }
 /* Dinâmica do ranking */
 .ranking-ctn {
@@ -447,6 +451,9 @@ header nav ul {
         padding: 0 16px;
         margin-bottom: 32px;
     }
+    .page-ranking {
+        margin-top: 120px;
+    }
     .ranking-ctn {
         padding: 16px;
     }
@@ -596,7 +603,7 @@ header nav ul {
     .active-dropdown {
         opacity: 1;
         transform: translateY(0px);
-        transition: .4s;
+        transition: .4s ease-in-out;
         z-index: 2;
     }
     .mobile-dropdown li {

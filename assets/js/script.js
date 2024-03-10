@@ -8,6 +8,16 @@ const upMarker = "assets/imgs/up.svg";
 const downMarker = "assets/imgs/down.svg";
 const neutralMarker = "assets/imgs/neutral.svg";
 let rankingDisplay = document.querySelector(".ranking-display");
+let ctnImg = document.querySelectorAll(".ctn-img");
+let cardInfo = document.querySelectorAll(".card-info");
+
+ctnImg.forEach((element) => {
+    element.addEventListener("click", () => {
+        cardInfo.forEach((element) => {
+            element.style.display = "flex";
+        })
+    })
+})
 
 function loadLottieAnimation(containerSelector, animationPath) {
     setTimeout(function () {
@@ -29,6 +39,8 @@ podium.style.height = "0px";
 podium.style.border = "none";
 
 let loaderCtn = document.querySelector(".ranking-loader");
+
+loaderCtn.style.display = "none";
 
 document.addEventListener("DOMContentLoaded", function () {
     const loaderText = document.querySelector(".loader-text");
@@ -58,7 +70,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     setTimeout(() => {
         pageRanking.style.display = "block";
-        loaderCtn.style.display = "none";
     }, 5500);
 });
 
@@ -343,7 +354,7 @@ lerJogadores((err, jogadores, listaDinamica) => {
             btnFeminino.classList.remove("active");
             btnMasculino.classList.remove("active");
             rankingDisplay.style.opacity = "0";
-            loaderCtn.style.display = "flex";
+            loaderCtn.style.display = "grid";
             listaDinamica = [];
             listaDinamica = jogadores;
             atualizarPosicoes(listaDinamica);
@@ -359,7 +370,7 @@ lerJogadores((err, jogadores, listaDinamica) => {
             btnMasculino.classList.remove("active");
             btnGeral.classList.remove("active");
             rankingDisplay.style.opacity = "0";
-            loaderCtn.style.display = "flex";
+            loaderCtn.style.display = "grid";
             listaDinamica = [];
             listaDinamica = jogadorasFeminino;
             atualizarPosicoes(listaDinamica);
@@ -374,7 +385,7 @@ lerJogadores((err, jogadores, listaDinamica) => {
             btnFeminino.classList.remove("active");
             btnGeral.classList.remove("active");
             rankingDisplay.style.opacity = "0";
-            loaderCtn.style.display = "flex";
+            loaderCtn.style.display = "grid";
             listaDinamica = [];
             listaDinamica = jogadoresMasculino;
             atualizarPosicoes(listaDinamica);
