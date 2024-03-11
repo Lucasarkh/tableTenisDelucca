@@ -1,16 +1,1 @@
-[
-    {
-        "2024-03-11": [
-          {
-            "jogador": "Felps",
-            "oponente": "Lucas",
-            "vencedor": "Felps"
-          },
-          {
-            "jogador": "Felps",
-            "oponente": "Lucas",
-            "vencedor": "Felps"
-          }
-        ]
-      }
-]
+[{"2024-03-10":[{"jogador":"teste","oponente":"teste","vencedor":"teste"},{"jogador":"teste","oponente":"teste","vencedor":"teste"},{"jogador":"teste","oponente":"teste","vencedor":"teste"},{"jogador":"teste","oponente":"teste","vencedor":"teste"}]},{"2024-03-13":[{"jogador":"Lucas","oponente":"Lucas","vencedor":"Lucas"},{"jogador":"Lucas","oponente":"Felps","vencedor":"Felps"}]},{"2024-03-31":[{"jogador":"Lucas","oponente":"Lucas","vencedor":"Lucas"}]}]
