@@ -74,11 +74,11 @@
   {
       "nome": "Pedro De Wit",
       "vitorias": {
-        "11/03/2024": 0
+        "11/03/2024": 1
       },
       "genero": "masculino",
       "avatar": "assets/imgs/players/pedro-de-wit.jpg",
-      "totalVitorias": 0,
+      "totalVitorias": 1,
       "estilo": "Clássico"
   },
   {
@@ -144,11 +144,11 @@
   {
       "nome": "Thiago",
       "vitorias": {
-        "11/03/2024": 1
+        "11/03/2024": 3
       },
       "genero": "masculino",
       "avatar": "assets/imgs/players/thiago.jpg",
-      "totalVitorias": 2,
+      "totalVitorias": 4,
       "estilo": "Classineta"
   },
   {
