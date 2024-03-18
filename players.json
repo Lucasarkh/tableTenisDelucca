@@ -2,7 +2,7 @@
   {
       "nome": "Lucas",
       "vitorias": {
-        "11/03/2024": 5
+        "11/03/2024": 0
 
       },
       "genero": "masculino",
@@ -74,7 +74,7 @@
   {
       "nome": "Pedro De Wit",
       "vitorias": {
-        "11/03/2024": 1
+        "11/03/2024": 0
       },
       "genero": "masculino",
       "avatar": "assets/imgs/players/pedro-de-wit.jpg",
@@ -84,7 +84,7 @@
   {
       "nome": "Luiz",
       "vitorias": {
-        "11/03/2024": 2
+        "11/03/2024": 0
       },
       "genero": "masculino",
       "avatar": "assets/imgs/players/luiz.jpg",
@@ -144,7 +144,7 @@
   {
       "nome": "Thiago",
       "vitorias": {
-        "11/03/2024": 3
+        "11/03/2024": 0
       },
       "genero": "masculino",
       "avatar": "assets/imgs/players/thiago.jpg",
@@ -154,7 +154,7 @@
   {
       "nome": "Brito",
       "vitorias": {
-        "11/03/2024": 1
+        "11/03/2024": 0
       },
       "genero": "masculino",
       "avatar": "assets/imgs/players/brito.jpg",
