@@ -24,7 +24,7 @@
   {
       "nome": "Felps",
       "vitorias": {
-        "11/03/2024": 0
+        "11/03/2024": 3
       },
       "genero": "masculino",
       "avatar": "assets/imgs/players/felps.jpg",
@@ -34,7 +34,7 @@
   {
       "nome": "Roger",
       "vitorias": {
-        "11/03/2024": 0
+        "11/03/2024": 2
       },
       "genero": "masculino",
       "avatar": "assets/imgs/players/roger.jpg",
@@ -44,7 +44,7 @@
   {
       "nome": "Thales",
       "vitorias": {
-        "11/03/2024": 0
+        "11/03/2024": 1
       },
       "genero": "masculino",
       "avatar": "assets/imgs/players/thales.jpg",
